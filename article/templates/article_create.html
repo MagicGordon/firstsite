@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<ol class="breadcrumb">
+  <li><a href="/">首页</a></li>
+  <li><a href="/article/list/{{ b.id }}">{{ b.name }}</a></li>
+  <li class="active">发表文章</li>
+</ol>
+{% endblock %}
