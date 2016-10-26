@@ -16,5 +16,15 @@
       <th>最后更新时间</th>
     </tr>
   </thead>
+  <tbody>
+    {% for article in articles %}
+    <tr>
+      <td>{{ article.title }}</td>
+      <td>{{ article.content }}</td>
+      <td>{{ article.create_timestamp|date:"Y-m-d P" }}</td>
+      <td>{{ article.last_update_timestamp|date:"Y-m-d P" }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 {% endblock %}
