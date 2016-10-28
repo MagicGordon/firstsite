@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-xs-12 col-md-12">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a href="#" style="font-size:16px;">注册</a>
+    <!-- <span class="pull-right">{{ b.manager_name }}</span> -->
+  </div>
+  {% if error %}
+  <br/>
+  <div class="alert alert-danger">{{ error }}</div> 
+  {% endif %}
+  <div class="panel-body">
+    <form method="POST" action="/register">{% csrf_token %}
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">用&nbsp;&nbsp;户&nbsp;&nbsp;名</span>
+        <input type="text" class="form-control" placeholder="请输入用户名" aria-describedby="basic-addon1" name="username">
+      </div>
+      <br/>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span>
+        <input type="text" class="form-control" placeholder="请输入邮箱" aria-describedby="basic-addon1" name="email">
+      </div>
+      <br/>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+        <input type="text" class="form-control" placeholder="请输入密码" aria-describedby="basic-addon1" name="password">
+      </div>
+      <br/>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">确认密码</span>
+        <input type="text" class="form-control" placeholder="请确认密码" aria-describedby="basic-addon1" name="re_password">
+      </div>
+      <br/>
+      <button type="submit" class="btn btn-primary">注册</button>
+    </form>
+  </div>
+</div>
+</div>
+
+{% endblock %}
