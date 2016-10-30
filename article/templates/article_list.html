@@ -31,20 +31,6 @@
 <br/>
 <br/>
 <br/>
-<nav aria-label="...">
-  <ul class="pagination">
-    {% if page_data.has_previous %}
-    <li><a href="?page_no=1" aria-label="Previous">首页</a></li>
-    <li><a href="?page_no={{ page_data.previous }}" aria-label="Previous">&laquo;</a></li>
-    {% endif %}
-    {% for page in page_data.page_links %}
-        <li{% if page == page_data.current_no %} class="active"{% endif %}><a href="?page_no={{ page }}">{{ page }}</a></li>
-    {% endfor %}
-    {% if page_data.has_next %}
-    <li><a href="?page_no={{ page_data.next }}" aria-label="Previous">&raquo;</a></li>
-    <li><a href="?page_no={{ page_data.page_cnt }}" aria-label="Previous">尾页</a></li>
-    {% endif %}    
-  </ul>
-</nav>
+{% include "component/paginator.html" %}
 </div>
 {% endblock %}
